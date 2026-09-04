@@ -1,0 +1,142 @@
+Level 2 自動檢查報告
+==============================================================================
+繳交資料夾：C:\Users\user\Desktop\Big_Folder\Programs\python程式\Real_Time_System\level2
+整體狀態：PASS/WARN：基本檢查完成，Level 2 設計仍需人工審查
+
+說明：本報告列出自動檢查可判定的問題。Level 2 延伸設計、公式假設、
+      market/battery/renewable 等自訂模型仍需搭配 report.pdf 與 source code 判讀。
+
+Response time 容納兩種慣例：completion_time - r，以及 completion_time - r + 1。
+
+1. 檔案載入狀態
+------------------------------------------------------------------------------
+- processor_settings       OK         必要   input\processor_settings.json
+- price_72hr               OK         必要   input\price_72hr.json
+- task_set                 OK         必要   output\task_set.json
+- schedule_result          OK         必要   output\schedule_result.json
+- evaluation_results       OK         必要   output\evaluation_results.json
+- acceptance_test_log      OK         必要   output\acceptance_test_log.json
+- event_file               OK         選用   input\aperiodic_n_sporadic.json
+
+2. 輔助檔案
+------------------------------------------------------------------------------
+- README.md                缺少   README.md
+- report.pdf               缺少   report.pdf
+- src                      存在   src
+- src/task_generator.*     存在   src\task_generator.py
+- src/scheduler.*          存在   src\scheduler.py
+- src/evaluator.*          存在   src\evaluator.py
+- src/advanced_scheduler.* 缺少   src/advanced_scheduler.*
+- runtime_config.*         缺少   runtime_config.*
+- crontab.txt              缺少   crontab.txt
+- src/runtime_config.*     缺少   src/runtime_config.*
+- src/crontab.txt          缺少   src/crontab.txt
+
+3. JSON 結構檢查
+------------------------------------------------------------------------------
+- 錯誤/違規：0
+- 警告：0
+- 錯誤：無
+- 警告：無
+
+4. 重算指標摘要
+------------------------------------------------------------------------------
+Deadline / tardiness:
+  - hard_deadline_miss_rate              0
+  - soft_deadline_miss_rate              0.111111
+  - average_tardiness                    0.084507
+  - max_tardiness                        6
+
+Response time:
+  - average_response_time                2.56338
+  - max_response_time                    11
+  - average_response_time_plus_one       3.56338
+  - max_response_time_plus_one           12
+  - completed_response_time_job_count    71
+
+Cost / revenue / objective:
+  - generator_cost                       327137.68
+  - market_revenue                       340503.04
+  - objective_value                      -3365.36
+  - basic_generator_cost                 327137.68
+  - basic_market_revenue                 340503.04
+  - basic_objective_value                -3365.36
+
+Other:
+  - completion_time_jitter               20.540862
+  - sporadic_value_rate                  1
+
+- completion_time_jitter 定義：mean of per-periodic-task population standard deviation of completion times
+- 時段慣例：Accepted response-time conventions: completion_time = max(executed_slots); absolute_deadline = r + d - 1; response_time = completion_time - r or completion_time - r + 1; tardiness = max(0, completion_time - absolute_deadline)
+
+5. evaluation_results 一致性
+------------------------------------------------------------------------------
+- 不一致：0
+- 缺欄位：0
+- 所有可比對指標皆一致。
+
+Response time 算法判定：
+- average_response_time：detected response time convention: completion_time - release_time; without +1=2.563380281690141; with +1=3.563380281690141
+- max_response_time：detected response time convention: completion_time - release_time; without +1=11.0; with +1=12.0
+
+6. 可行性檢查
+------------------------------------------------------------------------------
+- 錯誤/違規：0
+- 警告：2
+- 違規：無
+警告類型摘要：
+- soft_deadline: 1
+- storage_soc_transition: 1
+警告樣本（前 2 筆 / 共 2 筆）：
+- aperiodic job missed soft deadline or is unfinished
+  check=soft_deadline；job_id=a2
+- SOC bounds are checked directly. SOC transition equation may require manual review for Level 2 battery extensions.
+  check=storage_soc_transition；manual_review=True
+
+7. Level 2 延伸證據
+------------------------------------------------------------------------------
+- 偵測到的延伸：未偵測到明確延伸
+- 掃描路徑：C:\Users\user\Desktop\Big_Folder\Programs\python程式\Real_Time_System\level2
+
+判讀提醒：
+- Level 2 evidence detection is only a hint for manual review. No detected evidence does not necessarily mean the submission has no Level 2 work. Please verify Level 2 assumptions, modeling, and dynamic scheduling design from README, report.pdf, source code, and demo explanation.
+
+8. 圖表輸出
+------------------------------------------------------------------------------
+- job_gantt                    C:\Users\user\Desktop\Big_Folder\Programs\python程式\Real_Time_System\level2\test2\reports\charts\job_gantt.png
+- generator_output_timeline    C:\Users\user\Desktop\Big_Folder\Programs\python程式\Real_Time_System\level2\test2\reports\charts\generator_output_timeline.png
+- battery_soc_timeline         C:\Users\user\Desktop\Big_Folder\Programs\python程式\Real_Time_System\level2\test2\reports\charts\battery_soc_timeline.png
+- sell_timeline                C:\Users\user\Desktop\Big_Folder\Programs\python程式\Real_Time_System\level2\test2\reports\charts\sell_timeline.png
+- deadline_miss_timeline       C:\Users\user\Desktop\Big_Folder\Programs\python程式\Real_Time_System\level2\test2\reports\charts\deadline_miss_timeline.png
+- 圖表警告：無
+
+9. 問題總表
+------------------------------------------------------------------------------
+1. [警告] 排程/模型可行性
+   問題：soft_deadline: 1 筆警告；代表訊息：aperiodic job missed soft deadline or is unfinished；筆數=1
+   細節：check=soft_deadline；sample={check: soft_deadline, job_id: a2, message: aperiodic job missed soft deadline or is unfinished}
+
+2. [警告] 排程/模型可行性
+   問題：storage_soc_transition: 1 筆警告；代表訊息：SOC bounds are checked directly. SOC transition equation may require manual review for Level 2 battery extensions.；筆數=1
+   細節：check=storage_soc_transition；sample={check: storage_soc_transition, message: SOC bounds are checked directly. SOC transition equation may require manual review for Level 2 battery extensions., manual_review: True}
+
+
+10. 建議審查問題
+------------------------------------------------------------------------------
+- 請學生說明 Level 2 放寬了哪些 assumptions。
+- 請學生說明新增欄位如何影響限制式與 objective value。
+- 請學生說明 Level 2 方法和 Level 1 static schedule 的差異。
+- 請學生根據甘特圖說明 miss、reject、replan 或成本上升的原因。
+- 請學生說明 rejected sporadic jobs 的原因。
+
+11. 技術摘要
+------------------------------------------------------------------------------
+- Top-level errors：無
+Top-level warning 類型摘要：
+- soft_deadline: 1
+- storage_soc_transition: 1
+Top-level warning 樣本（前 2 筆 / 共 2 筆）：
+- aperiodic job missed soft deadline or is unfinished
+  check=soft_deadline；job_id=a2
+- SOC bounds are checked directly. SOC transition equation may require manual review for Level 2 battery extensions.
+  check=storage_soc_transition；manual_review=True

@@ -52,5 +52,5 @@ The scheduler and evaluator were re-run from this archived submission. The auxil
 ## Interpretation notes
 
 - `output/evaluation_results.json` preserves the course-compatible metrics. Its `objective_value` uses generator cost and market revenue only; it does **not** include all Level 2 terms such as the shortfall penalty, start-up cost, and battery-aging cost. Do not interpret it as the complete Level 2 optimization objective.
+- In the reactive re-scheduling path, the spare-margin tracker appears to subtract scheduled sporadic-job load after that load has already been included in the fixed-load balance. This is conservative rather than a reported feasibility violation, but it can reduce accepted work; review it before using the project to claim optimal admission performance.
 - The `test2/` package and course documents are retained for archival and reproducibility. Reuse is subject to the course materials' original terms.
-

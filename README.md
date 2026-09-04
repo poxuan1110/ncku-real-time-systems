@@ -1,13 +1,6 @@
-# NCKU Real-Time Systems — Level 2 Virtual Power Plant Scheduler
+# NCKU Real-Time Systems — Virtual Power Plant Scheduler
 
-Coursework archive for a Level 2 virtual power plant (VPP) scheduling project.
-
-| Item | Value |
-| --- | --- |
-| Institution | National Cheng Kung University (NCKU) |
-| Course | Real-Time Systems |
-| Student ID | F74122048 |
-| Project scope | Level 2 final demo / submission |
+Coursework archive for a virtual power plant (VPP) scheduling project.
 
 ## Overview
 

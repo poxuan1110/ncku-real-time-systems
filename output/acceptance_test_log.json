@@ -1,0 +1,173 @@
+{
+    "acceptance_test_log": [
+        {
+            "job_id": "a1",
+            "type": "aperiodic",
+            "release_time": 4,
+            "abs_deadline": 16,
+            "execution_time": 3,
+            "energy_demand": 14,
+            "assigned_hours": [
+                5,
+                6,
+                7
+            ],
+            "accepted": true
+        },
+        {
+            "time_arrived": 6,
+            "job_id": "s1",
+            "status": "Accepted",
+            "assigned_hours": [
+                6,
+                7
+            ]
+        },
+        {
+            "job_id": "a2",
+            "type": "aperiodic",
+            "release_time": 11,
+            "abs_deadline": 17,
+            "execution_time": 2,
+            "energy_demand": 5,
+            "assigned_hours": [
+                21,
+                22
+            ],
+            "accepted": true
+        },
+        {
+            "time_arrived": 17,
+            "job_id": "s2",
+            "status": "Accepted",
+            "assigned_hours": [
+                20,
+                21,
+                22
+            ]
+        },
+        {
+            "job_id": "a3",
+            "type": "aperiodic",
+            "release_time": 20,
+            "abs_deadline": 34,
+            "execution_time": 4,
+            "energy_demand": 13,
+            "assigned_hours": [
+                21,
+                22,
+                23,
+                24
+            ],
+            "accepted": true
+        },
+        {
+            "job_id": "a4",
+            "type": "aperiodic",
+            "release_time": 25,
+            "abs_deadline": 32,
+            "execution_time": 2,
+            "energy_demand": 9,
+            "assigned_hours": [
+                25,
+                26
+            ],
+            "accepted": true
+        },
+        {
+            "time_arrived": 29,
+            "job_id": "s3",
+            "status": "Accepted",
+            "assigned_hours": [
+                29
+            ]
+        },
+        {
+            "job_id": "a5",
+            "type": "aperiodic",
+            "release_time": 32,
+            "abs_deadline": 37,
+            "execution_time": 1,
+            "energy_demand": 11,
+            "assigned_hours": [
+                32
+            ],
+            "accepted": true
+        },
+        {
+            "job_id": "a6",
+            "type": "aperiodic",
+            "release_time": 38,
+            "abs_deadline": 49,
+            "execution_time": 3,
+            "energy_demand": 7,
+            "assigned_hours": [
+                45,
+                46,
+                47
+            ],
+            "accepted": true
+        },
+        {
+            "time_arrived": 44,
+            "job_id": "s4",
+            "status": "Accepted",
+            "assigned_hours": [
+                44,
+                45
+            ]
+        },
+        {
+            "job_id": "a7",
+            "type": "aperiodic",
+            "release_time": 47,
+            "abs_deadline": 62,
+            "execution_time": 4,
+            "energy_demand": 11,
+            "assigned_hours": [
+                47,
+                48,
+                49,
+                50
+            ],
+            "accepted": true
+        },
+        {
+            "job_id": "a8",
+            "type": "aperiodic",
+            "release_time": 54,
+            "abs_deadline": 66,
+            "execution_time": 2,
+            "energy_demand": 12,
+            "assigned_hours": [
+                54,
+                55
+            ],
+            "accepted": true
+        },
+        {
+            "time_arrived": 60,
+            "job_id": "s5",
+            "status": "Accepted",
+            "assigned_hours": [
+                60,
+                61,
+                62
+            ]
+        },
+        {
+            "job_id": "a9",
+            "type": "aperiodic",
+            "release_time": 62,
+            "abs_deadline": 71,
+            "execution_time": 3,
+            "energy_demand": 6,
+            "assigned_hours": [
+                62,
+                63,
+                64
+            ],
+            "accepted": true
+        }
+    ]
+}

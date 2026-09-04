@@ -1,0 +1,27 @@
+{
+  "hard_deadline_miss_rate": 0.0,
+  "soft_deadline_miss_rate": 0.1111111111111111,
+  "average_tardiness": 0.08450704225352113,
+  "max_tardiness": 6.0,
+  "average_response_time": 2.563380281690141,
+  "max_response_time": 11.0,
+  "average_response_time_plus_one": 3.563380281690141,
+  "max_response_time_plus_one": 12.0,
+  "completion_time_jitter": 20.540862303881116,
+  "completion_time_jitter_definition": "mean of per-periodic-task population standard deviation of completion times",
+  "time_slot_convention": "Accepted response-time conventions: completion_time = max(executed_slots); absolute_deadline = r + d - 1; response_time = completion_time - r or completion_time - r + 1; tardiness = max(0, completion_time - absolute_deadline)",
+  "completed_response_time_job_count": 71,
+  "sporadic_value_rate": 1.0,
+  "basic_generator_cost": 327137.68000000005,
+  "generator_cost": 327137.68000000005,
+  "basic_market_revenue": 340503.0400000001,
+  "market_revenue": 340503.0400000001,
+  "basic_objective_value": -3365.3600000000442,
+  "objective_value": -3365.3600000000442,
+  "hard_deadline_missed_jobs": [],
+  "soft_deadline_missed_jobs": [
+    "a2"
+  ],
+  "warnings": [],
+  "errors": []
+}
